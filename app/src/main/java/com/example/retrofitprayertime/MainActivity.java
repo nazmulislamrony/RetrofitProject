@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.retrofitprayertime.datas.Data;
 import com.example.retrofitprayertime.datas.DataClass;
-
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkDat(){
-        Call<DataClass> call=jsonPlaceHolderApi.getPost();
+        Call<DataClass> call=jsonPlaceHolderApi.getPost("Dhaka", "Bangladesh");
         call.enqueue(new Callback<DataClass>() {
             @Override
             public void onResponse(Call<DataClass> call, Response<DataClass> response) {
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
                     String content="";
 
-                    content+="Fajar: "+datas.getData().getTimings().getAsr()+"\n";
+                    content+="Asr: "+datas.getData().getTimings().getAsr()+"\n";
 //                    content+="Juhur: "+datas.getJuhur()+"\n";
                 Log.d("cont_tent_a", "contnt: "+content);
                     myText.append(content);
