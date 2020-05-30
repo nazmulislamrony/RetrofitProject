@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     String content="";
 
                     content+="Asr: "+datas.getData().getTimings().getAsr()+"\n";
+                    content+="Duhur: "+datas.getData().getTimings().getDhuhr();
 //                    content+="Juhur: "+datas.getJuhur()+"\n";
                 Log.d("cont_tent_a", "contnt: "+content);
                     myText.append(content);
